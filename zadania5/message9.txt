@@ -1,0 +1,15 @@
+Subject: Hello
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+        boundary="XXXXboundary text"
+
+This is a multipart message in MIME format.
+
+--XXXXboundary text
+Content-Type: text/html
+
+<b>pogrubienie</b>
+<i>pochylenie</i>
+<u>podkreślenie</u>
+
+--XXXXboundary text--

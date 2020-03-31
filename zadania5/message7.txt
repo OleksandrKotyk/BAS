@@ -1,0 +1,29 @@
+Subject: Hello
+MIME-Version: 1.0
+Content-Type: multipart/mixed;
+        boundary="XXXXboundary text"
+
+This is a multipart message in MIME format.
+
+--XXXXboundary text
+Content-Type: text/plain
+
+this is the body text
+
+--XXXXboundary text
+Content-Type: text/plain; name=\"messege.log\"
+Content-Disposition: attachment; filename=\"messege.log\"
+Content-Transfer-Encoding: base64
+U3ViamVjdDogSGVsbG8KTUlNRS1WZXJzaW9uOiAxLjAKQ29udGVudC1UeXBlOiBtdWx0aXBhcnQvbWl4Z
+WQ7CiAgICAgICAgYm91bmRhcnk9IlhYWFhib3VuZGFyeSB0ZXh0IgoKVGhpcyBpcyBhIG11bHRpcGFydC
+BtZXNzYWdlIGluIE1JTUUgZm9ybWF0LgoKLS1YWFhYYm91bmRhcnkgdGV4dApDb250ZW50LVR5cGU6IHR
+leHQvcGxhaW4KCnRoaXMgaXMgdGhlIGJvZHkgdGV4dAoKLS1YWFhYYm91bmRhcnkgdGV4dApDb250ZW50
+LVR5cGU6IHRleHQvcGxhaW47IG5hbWU9XCJtZXNzZWdlLmxvZ1wiCkNvbnRlbnQtRGlzcG9zaXRpb246I
+GF0dGFjaG1lbnQ7IGZpbGVuYW1lPVwibWVzc2VnZS5sb2dcIgpDb250ZW50LVRyYW5zZmVyLUVuY29kaW
+5nOiBiYXNlNjQKVFVsTlJTMVdaWEp6YVc5dU9pQXhMakFLUTI5dWRHVnVkQzFVZVhCbE9pQnRkV3gwYVh
+CaGNuUXZiV2w0WldRN0NpQWdJQ0FnSUNBZ1ltOTFibVJoY25rOUlsaFlXRmhpYjNWdVpHRnllU0IwWlho
+MElnb0tWR2hwY3lCcGN5QmhJRzExYkhScGNHRnlkQ0J0WlhOellXZGxJR2x1SUUxSlRVVWdabTl5YldGM
+Exnb0tMUzFZV0ZoWVltOTFibVJoY25rZ2RHVjRkQXBEYjI1MFpXNTBMVlI1Y0dVNklIUmxlSFF2Y0d4aG
+FXNEtDblJvYVhNZ2FYTWdkR2hsSUdKdlpIa2dkR1Y0ZEFvS0xTMVlXRmhZWW05MWJtUmhjbmtnZEdWNGR
+DMHQKLS1YWFhYYm91bmRhcnkgdGV4dC0t
+--XXXXboundary text--

@@ -1,0 +1,25 @@
+from socket import *
+
+
+s = socket(AF_INET, SOCK_STREAM)
+s.connect_ex(("127.0.0.2", 12636))
+print(s.recv(1024))
+s.sendall(b"asdf\r\nDA")
+print(s.recv(1024))
+s.sendall(b"TA\r\n")
+print(s.recv(1024))
+s.sendall(b"AUTH LOGIN \r\n")
+print(s.recv(1024))
+s.sendall(b"AUTH LOGIN \r\n")
+print(s.recv(1024))
+s.sendall(b"AUTH LOGIN \r\n")
+print(s.recv(1024))
+s.sendall(b"MAIL FROM:\r\n")
+print(s.recv(1024))
+s.sendall(b"RCPT TO:\r\n")
+print(s.recv(1024))
+s.sendall(b"RCPT TO:\r\nRCPT TO:\r\n")
+print(s.recv(1024))
+print(s.recv(1024))
+s.close()
+
