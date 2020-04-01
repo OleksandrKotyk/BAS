@@ -38,19 +38,25 @@ while True:
         if cStr.find(b"HELO ") == 0:
             conn.send(b'250 poczta.interia.pl\r\n')
         elif cStr.find(b"AUTH LOGIN ") == 0:
-            conn.send(b'334 VXNlcm5hbWU6\r\n')
             try:
+                conn.send(b'334 VXNlcm5hbWU6\r\n')
                 fnd, mes = message(mes, conn)
-            except socket.timeout:
-                break
-            mes = mes[fnd + 2:]
-            conn.send(b'334 UGFzc3dvcmQ6\r\n')
-            try:
+                print("" if mes[:fnd] == b'' else "Login: " + mes[:fnd].decode("utf-8") + "\n", end="")
+                mes = mes[fnd + 2:]
+                conn.send(b'334 UGFzc3dvcmQ6\r\n')
                 fnd, mes = message(mes, conn)
+                print("" if mes[:fnd] == b'' else "Password: " + mes[:fnd].decode("utf-8") + "\n", end="")
+                mes = mes[fnd + 2:]
+                conn.send(b'235 2.7.0 Authentication successful\r\n')
             except socket.timeout:
+                print("timout")
                 break
-            mes = mes[fnd + 2:]
-            conn.send(b'235 2.7.0 Authentication successful\r\n')
+            except BrokenPipeError:
+                print("BrokenPipe")
+                break
+            except ConnectionRefusedError:
+                print("ConnectionRefused")
+                break
         elif cStr.find(b"MAIL FROM:") == 0:
             conn.send(b'250 2.1.5 Ok\r\n')
         elif cStr.find(b"RCPT TO:") == 0:
@@ -59,3 +65,4 @@ while True:
             conn.send(b'354 End data with <CR><LF>.<CR><LF>\r\n')
         else:
             conn.send(b"Bad message!!!\r\n")
+    print("Disconect from: ", addr, ".", sep="", end="\n\n")
