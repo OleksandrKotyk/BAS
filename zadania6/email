@@ -1,0 +1,74 @@
++OK Message follows
+Received: from fmx55.pf.interia.pl (localhost [127.0.0.1])
+	by fmx55.pf.interia.pl (Postfix) with ESMTP id C97DC180B5EFC
+	for <oleksandt.kotyk@interia.pl>; Sun,  5 Apr 2020 19:53:41 +0200 (CEST)
+X-Envelope-From: <oleksandr.kotyk@icloud.com>
+Received: from pv50p00im-zteg10011401.me.com (pv50p00im-zteg10011401.me.com [17.58.6.41])
+	(using TLSv1.2 with cipher ECDHE-RSA-AES256-GCM-SHA384 (256/256 bits))
+	(No client certificate requested)
+	by fmx55.pf.interia.pl (Postfix) with ESMTPS
+	for <oleksandt.kotyk@interia.pl>; Sun,  5 Apr 2020 19:53:39 +0200 (CEST)
+DKIM-Signature: v=1; a=rsa-sha256; c=relaxed/relaxed; d=icloud.com;
+	s=1a1hai; t=1586109217;
+	bh=V927aO1OUvWaPkcm9EIN3uPa5xW2I/DrU8XrXmn8Rzo=;
+	h=To:From:Subject:Date:Message-id:Content-Type;
+	b=UDyaqESbbE9k3JG21YVkPV+st9/S5YVE/q2ndxKgq5oznCFTi30NdoFzbqvkQhAMh
+	 qtR70nSqOs9H2T9TCrBrqNyvyf8XVame4YxMsWVK70qUeU3Hv5hJIirxBc768zN28V
+	 DMDFiDN36H1gdfdfhbTa6hOwR1UtVwneAHiMvBSr8xQqypprzv0SSFYwXsQDjrJZC1
+	 XvlhwwZ9SonEf3wLnOi9aP/Jdav2HMcpSnxBnTpuo8WG3L+IyKS09FTNDl6KNDC21T
+	 9FpatGgBiDZgEMX+qQ6A1L88+BalAUw0HHZtpwoAHwUb1O9ZS7Li5kva62B3GxQtQP
+	 ZdmU5HlynjlQw==
+Received: from pv50p00im-zteg10011401.me.com (pv50p00im-asmtpout.me.com [10.112.78.137])
+	by pv50p00im-zteg10011401.me.com (Postfix) with ESMTPS id A6B789003E2
+	for <oleksandt.kotyk@interia.pl>; Sun,  5 Apr 2020 17:53:37 +0000 (UTC)
+Received: from localhost (pv42p49im-ztdg05090701.me.com [17.133.156.136])
+	by pv50p00im-zteg10011401.me.com (Postfix) with ESMTP id 9E6969002AE
+	for <oleksandt.kotyk@interia.pl>; Sun,  5 Apr 2020 17:53:37 +0000 (UTC)
+To:
+ oleksandt.kotyk@interia.pl
+From: Oleksandr Kotyk <oleksandr.kotyk@icloud.com>
+Subject: Test
+Date: Sun, 05 Apr 2020 17:53:37 -0000
+X-Mailer: iCloud MailClient2005Project76 MailServer2005B643.10000-Famine2005-0-e0ed524506c7
+Message-id: <4d35b78c-5af9-48f1-aea9-d58117824e40@me.com>
+Content-Type: multipart/alternative; boundary=Apple-Webmail-42--63fb65c4-d428-4eef-a708-957c6e85c874
+MIME-Version: 1.0
+X-Proofpoint-Virus-Version: vendor=fsecure engine=2.50.10434:,, definitions=2020-04-05_08:,,
+ signatures=0
+X-Proofpoint-Spam-Details: rule=notspam policy=default score=2 suspectscore=1 malwarescore=0
+ phishscore=0 bulkscore=0 spamscore=2 clxscore=1011 mlxscore=2
+ mlxlogscore=173 adultscore=0 classifier=spam adjust=0 reason=mlx
+ scancount=1 engine=8.0.1-1908290000 definitions=main-2004050168
+X-IPL-Priority-Group: 24-1722
+X-IPL-VerifiedSender: oleksandr.kotyk@icloud.com
+X-IPL-SAS-SPAS2: 15.1061
+X-Interia-Antivirus: OK
+X-IPL-SAS-UREP: 0
+X-IPL-SAS-UREP-PRIV: 0
+X-IPL-SAS: -15.11
+X-IPL-Envelope-To: oleksandt.kotyk@interia.pl
+
+
+--Apple-Webmail-42--63fb65c4-d428-4eef-a708-957c6e85c874
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/plain;
+    charset=utf-8;
+    format=flowed
+
+Hello=0A=0Amy name is name
+--Apple-Webmail-42--63fb65c4-d428-4eef-a708-957c6e85c874
+Content-Type: multipart/related;
+    type="text/html";
+    boundary=Apple-Webmail-86--63fb65c4-d428-4eef-a708-957c6e85c874
+
+
+--Apple-Webmail-86--63fb65c4-d428-4eef-a708-957c6e85c874
+Content-Transfer-Encoding: quoted-printable
+Content-Type: text/html;
+    charset=utf-8;
+
+<html><body><div>Hello</div><div><br data-mce-bogus=3D"1"></div><div>my name is name</=
+div></body></html>
+--Apple-Webmail-86--63fb65c4-d428-4eef-a708-957c6e85c874--
+
+--Apple-Webmail-42--63fb65c4-d428-4eef-a708-957c6e85c874--
