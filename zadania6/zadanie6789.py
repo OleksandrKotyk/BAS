@@ -22,18 +22,23 @@ socket.settimeout(4)
 socket.connect(("212.182.24.27", 16110))
 print(recvall(socket, 1024), end="\n\n")
 
-socket.send(b"USER student2@pas.umcs.pl\r\n")
+socket.send(b"USER student3@pas.umcs.pl\r\n")
 print(recvall(socket, 1024), end="\n\n")
-
 socket.send(b"PASS student2020\r\n")
 print(recvall(socket, 1024), end="\n\n")
+
+#socket.send(b"USER oleksandt.kotyk@interia.pl\r\n")
+#print(recvall(socket, 1024))
+#socket.send(b"PASS suvzan-gugkyw-veddA2\r\n")
+#print(recvall(socket, 1024))
+
 
 socket.sendall(b"LIST\r\n")
 print(recvall(socket, 1024), end="\n\n")
 
 sumOfBytes = 0
 theHeist = [-1, -1]
-num = 0
+num = b'0'
 
 message = recvall(socket, 1024)
 while message != b'.\r\n':
@@ -46,11 +51,14 @@ while message != b'.\r\n':
 print()
 
 
+print("numberOfLetters:", num.decode("utf-8"))
+print("sumOfBytes:", sumOfBytes)
+
+if theHeist[0] == -1:
+    exit()
 socket.sendall(b"RETR " + theHeist[0] + b"\r\n")
 message = recvall(socket, 1024)
 while message != b'.\r\n':
     print(message)
     message = recvall(socket, 1024)
 
-print("numberOfLetters:", num.decode("utf-8"))
-print("sumOfBytes:", sumOfBytes)

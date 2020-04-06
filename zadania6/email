@@ -1,4 +1,3 @@
-+OK Message follows
 Received: from fmx55.pf.interia.pl (localhost [127.0.0.1])
 	by fmx55.pf.interia.pl (Postfix) with ESMTP id C97DC180B5EFC
 	for <oleksandt.kotyk@interia.pl>; Sun,  5 Apr 2020 19:53:41 +0200 (CEST)
@@ -24,7 +23,7 @@ Received: from pv50p00im-zteg10011401.me.com (pv50p00im-asmtpout.me.com [10.112.
 Received: from localhost (pv42p49im-ztdg05090701.me.com [17.133.156.136])
 	by pv50p00im-zteg10011401.me.com (Postfix) with ESMTP id 9E6969002AE
 	for <oleksandt.kotyk@interia.pl>; Sun,  5 Apr 2020 17:53:37 +0000 (UTC)
-To:
+To: 
  oleksandt.kotyk@interia.pl
 From: Oleksandr Kotyk <oleksandr.kotyk@icloud.com>
 Subject: Test
@@ -72,3 +71,4 @@ div></body></html>
 --Apple-Webmail-86--63fb65c4-d428-4eef-a708-957c6e85c874--
 
 --Apple-Webmail-42--63fb65c4-d428-4eef-a708-957c6e85c874--
+
