@@ -62,3 +62,6 @@ while message != b'.\r\n':
     print(message)
     message = recvall(socket, 1024)
 
+socket.send(b"QUIT\r\n")
+print(recvall(socket, 1024))
+socket.close()

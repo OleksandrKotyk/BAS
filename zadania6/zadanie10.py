@@ -16,7 +16,7 @@ socket = socket(AF_INET, SOCK_STREAM)
 socket.settimeout(4)
 
 # socket.connect(("217.74.64.236", 110))
-#socket.connect(("127.0.0.2", 12636))
+# socket.connect(("127.0.0.2", 12636))
 socket.connect(("212.182.24.27", 16110))
 print(recvall(socket, 1024))
 
@@ -50,3 +50,7 @@ for i in range(1, int(num) + 1):
         message = recvall(socket, 1024)
 
     print("end --------------------------------------- end")
+
+socket.send(b"QUIT\r\n")
+print(recvall(socket, 1024))
+socket.close()

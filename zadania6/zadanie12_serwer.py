@@ -1,6 +1,5 @@
 import socket
 
-
 def next_mes(sock):
     ret_mes = b""
     while True:
@@ -48,6 +47,10 @@ while True:
                     conn.sendall(i)
                 conn.sendall(b'.\r\n')
                 emails[n].seek(0, 0)
+            elif mes.find(b"QUIT") != -1:
+                conn.sendall(b'+OK Logging out.\r\n')
+                conn.close()
+                break
             else:
                 conn.sendall(b'-ERR The command sent is invalid or unimplemented.\r\n')
         except socket.timeout:
