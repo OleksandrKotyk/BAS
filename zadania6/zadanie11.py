@@ -17,15 +17,22 @@ def recvall(sock, bite):
 socket = socket(AF_INET, SOCK_STREAM)
 socket.settimeout(4)
 
-socket.connect(("217.74.64.236", 110))
+#socket.connect(("217.74.64.236", 110))
+socket.connect(("212.182.24.27", 16110))
 # socket.connect(("127.0.0.2", 12636))
 print(recvall(socket, 1024))
 
-socket.send(b"USER oleksandt.kotyk@interia.pl\r\n")
-print(recvall(socket, 1024))
+#socket.send(b"USER oleksandt.kotyk@interia.pl\r\n")
+#print(recvall(socket, 1024))
 
-socket.send(b"PASS suvzan-gugkyw-veddA2\r\n")
-print(recvall(socket, 1024))
+#socket.send(b"PASS suvzan-gugkyw-veddA2\r\n")
+#print(recvall(socket, 1024))
+
+
+socket.send(b"USER student2@pas.umcs.pl\r\n")
+print(recvall(socket, 1024), end="\n\n")
+socket.send(b"PASS student2020\r\n")
+print(recvall(socket, 1024), end="\n\n")
 
 num = 0
 
@@ -44,7 +51,7 @@ for i in range(1, int(num) + 1):
     socket.send(b"RETR " + str(i).encode("utf-8") + b"\r\n")
     message = recvall(socket, 1024)
     while message != b'.\r\n':
-        if message.find(b'Content-Type: image/png') != -1:
+        if message.find(b'Content-Type: image/jpeg') != -1:
             while message != b'\r\n' and message != b'.\r\n':
                 if message.find(b" name") != -1:
                     beg = message.find(b'"')

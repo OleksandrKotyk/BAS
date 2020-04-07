@@ -22,7 +22,7 @@ socket.settimeout(4)
 socket.connect(("212.182.24.27", 16110))
 print(recvall(socket, 1024), end="\n\n")
 
-socket.send(b"USER student3@pas.umcs.pl\r\n")
+socket.send(b"USER student2@pas.umcs.pl\r\n")
 print(recvall(socket, 1024), end="\n\n")
 socket.send(b"PASS student2020\r\n")
 print(recvall(socket, 1024), end="\n\n")
