@@ -41,7 +41,6 @@ while True:
                 n = mes[mes.find(b" ") + 1:].replace(b"\r\n", b"")
                 n = int(n)
                 n -= 1
-                emails[n]
                 conn.sendall(b'+OK Message follows\r\n')
                 for i in emails[n]:
                     conn.sendall(i)
