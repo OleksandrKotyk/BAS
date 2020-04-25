@@ -30,8 +30,8 @@ retMes = b""
 socket = socket(AF_INET, SOCK_STREAM)
 socket.settimeout(0.2)
 
-# socket.connect(("212.182.24.27", 16143))
-socket.connect(("127.0.0.2", 12636))
+socket.connect(("212.182.24.27", 16143))
+# socket.connect(("127.0.0.2", 12636))
 recvall_all(socket, 1024)
 
 socket.send(b"A1 LOGIN student1@pas.umcs.pl student2020\r\n")
