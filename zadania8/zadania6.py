@@ -53,7 +53,6 @@ except ValueError:
     print("No int!!!")
     exit()
 
-
 socket.sendall(b"HEAD /image.jpg HTTP/1.1\r\n"
                b"HOST: 212.182.24.27\r\n"
                b"Content-Type: image/jpg\r\n"
@@ -62,7 +61,6 @@ retValue = 0
 recheaders(socket, b"ETag: ")
 print("-----------------------")
 eTeg = retValue
-
 
 fullBody = b""
 nowValue = 0
@@ -84,3 +82,9 @@ for i in range(1, 4):
 
 f = open("new.jpg", "wb")
 f.write(fullBody)
+
+
+socket.sendall(b"HEAD /image.jpg HTTP/1.1\r\n"
+               b"HOST: 212.182.24.27\r\n"
+               b"Connection: close\r\n\r\n")
+socket.close()

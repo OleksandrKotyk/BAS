@@ -45,3 +45,8 @@ recheaders(socket)
 body = recvbody(socket)
 f = open("new.png", "wb")
 print(body.decode("utf-8"))
+
+socket.sendall(b"HEAD /post HTTP/1.1\r\n"
+               b"HOST: 212.182.24.27\r\n"
+               b"Connection: close\r\n\r\n")
+socket.close()

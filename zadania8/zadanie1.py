@@ -44,6 +44,12 @@ socket.sendall(b"GET /html HTTP/1.1\r\n"
 
 recheaders(socket)
 body = recvbody(socket)
-print(body)
 f = open("new.html", "w")
 f.write(body.decode("utf-8"))
+
+
+socket.sendall(b"HEAD /html HTTP/1.1\r\n"
+               b"HOST: 212.182.24.27\r\n"
+               b"Connection: close\r\n\r\n")
+# recheaders(socket)
+socket.close()

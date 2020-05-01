@@ -42,3 +42,8 @@ recheaders(socket)
 body = recvbody(socket)
 f = open("new.png", "wb")
 f.write(body)
+
+socket.sendall(b"HEAD /image/png HTTP/1.1\r\n"
+               b"HOST: 212.182.24.27\r\n"
+               b"Connection: close\r\n\r\n")
+socket.close()
