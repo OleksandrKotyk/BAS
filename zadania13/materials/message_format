@@ -1,0 +1,10 @@
+Subject: {}
+MIME-Version: 1.0
+Content-Type: multipart/mixed; boundary="XXXXboundary text"
+
+--XXXXboundary text
+Content-Type: text/plain
+
+{}
+
+--XXXXboundary text--

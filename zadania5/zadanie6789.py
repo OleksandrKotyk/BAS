@@ -32,7 +32,7 @@ socket.send(b"AUTH LOGIN\r\n")
 print(recvall(socket, 1024))
 socket.send(b"b2xla3NhbmR0LmtvdHlrQGludGVyaWEucGw=" + b"\r\n")
 print(recvall(socket, 1024))
-socket.send(b"c3V2emFuLWd1Z2t5dy12ZWRkQTI=" + b"\r\n")
+socket.send(b"TmV3MTIzNCE=" + b"\r\n")
 print(recvall(socket, 1024))
 
 prep(socket)
