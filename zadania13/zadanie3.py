@@ -8,25 +8,30 @@ socket_weather = socket.socket()
 lock = Lock()
 
 
-def get_weather():
+def get_weather(city):
     global socket_weather
+    city = city.encode("utf-8") if type(city) != "bytes" else city
+    to_send = b"GET /data/2.5/weather?q=" + city + \
+              b"&appid=d4af3e33095b8c43f1a6815954face64 HTTP/1.1\r\n" \
+              b"HOST: " + socket.gethostbyname("api.openweathermap.org").encode() + b"\r\n\r\n"
     try:
-        socket_weather.sendall(
-            b"GET /data/2.5/weather?appid=d4af3e33095b8c43f1a6815954face64&id=765876 HTTP/1.1\r\n"
-            b"HOST: " + socket.gethostbyname("api.openweathermap.org").encode() + b"\r\n\r\n")
+        socket_weather.sendall(to_send)
         reach_headers(socket_weather, print_headers=False)
         body = recv_body(socket_weather, 4096)
-        body_dict = json.loads(body)["main"]
+        body_dict = json.loads(body)
     except (socket.error, OSError):
         socket_weather = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
         socket_weather.settimeout(0.5)
         socket_weather.connect((socket.gethostbyname("api.openweathermap.org"), 80))
-        socket_weather.sendall(
-            b"GET /data/2.5/weather?appid=d4af3e33095b8c43f1a6815954face64&id=765876 HTTP/1.1\r\n"
-            b"HOST: " + socket.gethostbyname("api.openweathermap.org").encode() + b"\r\n\r\n")
+        socket_weather.sendall(to_send)
         reach_headers(socket_weather, print_headers=False)
         body = recv_body(socket_weather, 4096)
-        body_dict = json.loads(body)["main"]
+        body_dict = json.loads(body)
+
+    try:
+        body_dict = json.loads(body)['main']
+    except KeyError:
+        return body_dict["message"]
     ret = ""
     for i in body_dict:
         ret += i + ": " + str(body_dict[i]) + ", "
@@ -86,8 +91,9 @@ def irc_start(conf, *msg_list):
                 print('PONG {} {}'.format(conf['channel'], msg[5:].decode("utf-8")), "::::::::: SEnDED")
             if msg.find(b"PRIVMSG") != -1:
                 mes = msg[msg.find(b":", 1) + 1:].decode()
-                if mes == "pogoda lublin":
-                    ssl_send('PRIVMSG #{} :{}'.format(conf['channel'], get_weather()))
+                if mes.startswith("pogoda "):
+                    city = mes[mes.find(" ") + 1:]
+                    ssl_send('PRIVMSG #{} :{}'.format(conf['channel'], get_weather(city)))
 
 
 irc_config = {
@@ -100,4 +106,4 @@ irc_config = {
 # SEND: something  - jeżeli wpisać w konsoli bot a to można wysyłać wiadomość
 # QUIT - stop bot, wysyła 'QUIT' do serwera
 # jeżeli użytkownik napisze 'pogoda lublin' to bot wyśle informacje o pogodzie
-irc_start(irc_config, "Hello, im a weather bot, 'pogoda lublin' = send weather information")
+irc_start(irc_config, "Hello, im a weather bot, 'pogoda city' = send weather information")
